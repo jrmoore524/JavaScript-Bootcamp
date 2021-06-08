@@ -12,7 +12,7 @@ let otherBook = {
     pageCount: 723
 }
 
-//getSummary function returning 2 objects for mybook
+//getSummary function returning 2 objects for myBook
 let getSummary = function (myBook) {
     return {
         summary: `${myBook.title} by ${myBook.author}`, 

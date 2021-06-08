@@ -39,3 +39,23 @@ console.log(otherBookSummary.summary)
 console.log(otherBookSummary.pageCountSummary)
 
 //Challenge
+//Create a function - take in fahrenheit - return object with 
+//fahrenheit converted to celsius and kelvin
+
+//set temp of fahrenheit variable
+let fahrenheit = 74
+
+//convertFahrenheit function that returns the conversions as an object
+let convertFahrenheit = function (fahrenheit) {
+    return {
+        fahrenheit: fahrenheit,
+        kelvin: (fahrenheit + 459.67) * (5/9),
+        celsius: (fahrenheit - 32) * (5/9)
+    }
+}
+
+//Set temps to the functions returned object
+let temps = convertFahrenheit(fahrenheit)
+
+//Print the object values
+console.log(temps)

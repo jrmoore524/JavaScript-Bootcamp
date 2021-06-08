@@ -4,7 +4,7 @@
 //A 90-100, B 89-89, C 70-79, D 60-69, F 0-59
 
 //Set variables for score and total score
-let score = 13
+let score = 10
 let totalScore = 20
 
 //gradeCalc function

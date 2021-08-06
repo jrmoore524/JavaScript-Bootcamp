@@ -6,14 +6,17 @@ let myAccount = {
     expenses: 0,
     income: 0
 }
-//Create addExpense function
-let addExpense = function (account, amount) {
-    account.expenses = account.expenses + amount
-}
+
 //Create addIncome function
 let addIncome = function (account, income) {
     account.income = account.income + income
 }
+
+//Create addExpense function
+let addExpense = function (account, amount) {
+    account.expenses = account.expenses + amount
+}
+
 //Create resetAccount function
 let resetAccount = function (account) {
     account.expenses = 0

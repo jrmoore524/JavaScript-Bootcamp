@@ -27,6 +27,6 @@ let isValidPassword = function (password) {
 }
 
 //Print if entered passwords are valid
-console.log(isValidPassword('asdfp'))
-console.log(isValidPassword('abc123!@#$%^&'))
-console.log(isValidPassword('asdfpasdfpoijpassword'))
+console.log(isValidPassword('asdfp')) //not valid
+console.log(isValidPassword('abc123!@#$%^&'))  //valid
+console.log(isValidPassword('asdfpasdfpoijpassword')) //not valid

@@ -17,7 +17,6 @@ console.log(password.includes('password'))
 console.log(name.trim())
 
 
-
 //Challenge (isValidPassword)
 //length is more than 8 - does not contain the word password
 

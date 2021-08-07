@@ -20,9 +20,9 @@ console.log(Math.ceil(num))
 
 //Create makeGuess function
 let makeGuess = function (guess) {
-    //set min random number
+    //Set min random number
     let min = 1 
-    //set max random number
+    //Set max random number
     let max = 5
     //Create randomNumber variable and set to random number generated
     let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min 

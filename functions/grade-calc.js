@@ -8,8 +8,8 @@ let score = 15
 let totalScore = 20
 
 //gradeCalc function
-let gradeCalc = function (score, totalScore) {
-    let percent = (score / totalScore) * 100
+const gradeCalc = function (score, totalScore) {
+    const percent = (score / totalScore) * 100
     let letterGrade = ''
 
     //Set percentage to a letterGrade
@@ -29,7 +29,7 @@ let gradeCalc = function (score, totalScore) {
 }
 
 //Set result to functions returned value
-let result = gradeCalc(score, totalScore)
+const result = gradeCalc(score, totalScore)
 
 //Output the result
 console.log(result)

@@ -9,7 +9,7 @@ console.log(name.toUpperCase())
 //Convert to lowercase and print (lowerCase method)
 console.log(name.toLowerCase())
 
-//Check if the password includes 'password' (include method)
+//Check if the password includes 'password' (includes method)
 let password = 'abc123asdf098'
 console.log(password.includes('password'))
 

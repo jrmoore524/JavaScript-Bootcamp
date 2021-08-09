@@ -13,5 +13,14 @@ todos.shift()
 //Output the number of todos left
 console.log(`You have ${todos.length} todos!`)
 
-//Output the todo list
-console.log(todos)
+//Output the todos left (callback function)
+todos.forEach(function (todo, index) {
+    const num = index + 1
+    console.log(`${num}. ${todo}`)
+})
+
+//Output the todos left (for loop)
+// for (let count = 0; count < todos.length; count++) {
+//     console.log(`${count + 1}. ${todos[count]}`)
+// }
+

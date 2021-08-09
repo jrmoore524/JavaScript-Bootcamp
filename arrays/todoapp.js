@@ -27,11 +27,11 @@ const deleteTodo = function (todos, todoText) {
 }
 
 //Create findTodo function
-// const findTodo = function(todos, noteText) {
-//     return todos.find(function(todos, index) {
-//         return todos.text.toLowerCase() === todos.text.toLowerCase()
-//     })
-// }
+const findTodo = function(todos, noteText) {
+    return todos.find(function(todos, index) {
+        return todos.text.toLowerCase() === todos.text.toLowerCase()
+    })
+}
 
 deleteTodo(todos, '!!buy food')
 console.log(todos)

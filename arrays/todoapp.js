@@ -26,20 +26,15 @@ const deleteTodo = function (todos, todoText) {
     }
 }
 
+//Create getThingsToDo function
 const getThingsToDo = function (todos) {
     return todos.filter(function (todo) {
         return !todo.completed 
     })
 }
 
-//Create findTodo function
-const findTodo = function(todos, noteText) {
-    return todos.find(function(todos, index) {
-        return todos.text.toLowerCase() === todos.text.toLowerCase()
-    })
-}
-
+//Output things to do
 console.log(getThingsToDo(todos))
 
-// deleteTodo(todos, '!!buy food')
-// console.log(todos)
+//deleteTodo(todos, '!!buy food')
+//console.log(todos)

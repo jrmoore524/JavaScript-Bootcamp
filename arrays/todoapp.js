@@ -1,10 +1,10 @@
 //Create todo array of objects
 const todos = [{
     text: 'Order cat food',
-    completed: true
+    completed: false
 }, {
     text: 'Clean kitchen',
-    completed: false
+    completed: true
 }, {
     text: 'Buy food',
     completed: true
@@ -26,6 +26,12 @@ const deleteTodo = function (todos, todoText) {
     }
 }
 
+const getThingsToDo = function (todos) {
+    return todos.filter(function (todo) {
+        return !todo.completed 
+    })
+}
+
 //Create findTodo function
 const findTodo = function(todos, noteText) {
     return todos.find(function(todos, index) {
@@ -33,5 +39,7 @@ const findTodo = function(todos, noteText) {
     })
 }
 
-deleteTodo(todos, '!!buy food')
-console.log(todos)
+console.log(getThingsToDo(todos))
+
+// deleteTodo(todos, '!!buy food')
+// console.log(todos)

@@ -15,6 +15,7 @@ const todos = [{
     text: 'Exercise',
     completed: true
 }]
+
 //Get the incompleted todos
 const incompleteTodos = todos.filter(function (todo) {
     return !todo.completed
@@ -31,6 +32,11 @@ todos.forEach(function (todo) {
     p.textContent = todo.text
     document.querySelector('body').appendChild(p)
 })
+
+//Listen to new todo creation
+document.querySelector('button').addEventListener('click', function (event){
+    console.log('Add a new todo')
+} )
 
 
 

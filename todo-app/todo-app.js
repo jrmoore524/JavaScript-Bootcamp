@@ -34,7 +34,7 @@ todos.forEach(function (todo) {
 })
 
 //Listen to new todo creation
-document.querySelector('button').addEventListener('click', function (event){
+document.querySelector('#add-todo').addEventListener('click', function (event){
     console.log('Add a new todo')
 } )
 

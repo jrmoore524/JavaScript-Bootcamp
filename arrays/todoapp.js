@@ -16,6 +16,19 @@ const todos = [{
     completed: true
 }]
 
+//Create sortTodos function
+const sortTodos = function (todos) {
+    todos.sort(function (a ,b) {
+        if (!a.completed && b.completed) {
+            return -1
+        }else if (!b.completed && a.completed) {
+            return 1
+        }else {
+            return 0
+        }
+    })
+}
+
 //Create deleteTodo function
 const deleteTodo = function (todos, todoText) {
     const index = todos.findIndex(function (todo) {
@@ -33,8 +46,11 @@ const getThingsToDo = function (todos) {
     })
 }
 
+sortTodos(todos)
+console.log(todos)
+
 //Output things to do
-console.log(getThingsToDo(todos))
+//console.log(getThingsToDo(todos))
 
 //deleteTodo(todos, '!!buy food')
 //console.log(todos)

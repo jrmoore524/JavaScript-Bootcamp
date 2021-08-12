@@ -1,7 +1,7 @@
 //Create todo array of objects
 const todos = [{
     text: 'Order cat food',
-    completed: false
+    completed: true
 }, {
     text: 'Clean kitchen',
     completed: false
@@ -10,19 +10,22 @@ const todos = [{
     completed: false
 }, {
     text: 'Do work',
-    completed: false
+    completed: true
 }, {
     text: 'Exercise',
     completed: false
 }]
 
 const filters = {
-    searchText: ''
+    searchText: '',
+    hideCompleted: false
 }
 //Output the todos
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
-        return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+        const hideCompletedMatch = !filters.hideCompleted || !todo.completed
+        return searchTextMatch && hideCompletedMatch
     })
     
     //Get the incompleted todos
@@ -49,6 +52,9 @@ const renderTodos = function (todos, filters) {
 //Function calls
 renderTodos(todos, filters)
 
+
+//Event handlers
+
 //Filter todos event handler
 document.querySelector('#filter-text').addEventListener('input', function(e) {
     filters.searchText = e.target.value
@@ -59,7 +65,7 @@ document.querySelector('#filter-text').addEventListener('input', function(e) {
 document.querySelector('#new-todo').addEventListener('submit', function (e) {
     //Prevent default form submission
     e.preventDefault()
-    //Push new todo to the list
+    //Push new todo object to the list
     todos.push({
         text: e.target.elements.todoText.value,
         completed: false
@@ -68,6 +74,11 @@ document.querySelector('#new-todo').addEventListener('submit', function (e) {
     renderTodos(todos, filters)
     //Clear the todo input box
     e.target.elements.todoText.value = ''
+})
+
+document.querySelector('#hide-completed').addEventListener('change', function (e) {
+    filters.hideCompleted = e.target.checked
+    renderTodos(todos, filters)
 })
 
 

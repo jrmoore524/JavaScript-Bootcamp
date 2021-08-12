@@ -17,7 +17,7 @@ const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
         return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
     })
-    //Clear all notes from the DIV
+    //Clear all notes from the DIV when filtering
     document.querySelector('#notes').innerHTML = ''
 
     //Output filtered notes to the page
@@ -28,21 +28,24 @@ const renderNotes = function (notes, filters) {
     })
 }
 
+//Call render notes function
 renderNotes(notes, filters)
 
-document.querySelector('#create-note').addEventListener('click', function (event) {
-    event.target.textContent = 'The button was clicked'
+//Create note click event handler
+document.querySelector('#create-note').addEventListener('click', function (e) {
+    e.target.textContent = 'The button was clicked'
 }) 
 
-document.querySelector('#remove-all').addEventListener('click', function () {
-    document.querySelectorAll('.note').forEach(function (note) {
-        note.remove()
-    })
-})
-
-document.querySelector("#search-text").addEventListener('input', function (event) {
-    filters.searchText = event.target.value
+//Search text input event handler
+document.querySelector("#search-text").addEventListener('input', function (e) {
+    filters.searchText = e.target.value
     renderNotes(notes, filters)
+})
+//Submit form submit event handler
+document.querySelector('#name-form').addEventListener('submit', function (e) {
+    e.preventDefault()
+    console.log(e.target.elements.firstName.value)
+    e.target.elements.firstName.value = ''
 })
 
 

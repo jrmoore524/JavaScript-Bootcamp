@@ -4,22 +4,22 @@ const todos = [{
     completed: false
 }, {
     text: 'Clean kitchen',
-    completed: true
+    completed: false
 }, {
     text: 'Buy food',
-    completed: true
+    completed: false
 }, {
     text: 'Do work',
     completed: false
 }, {
     text: 'Exercise',
-    completed: true
+    completed: false
 }]
 
 const filters = {
     searchText: ''
 }
-
+//Output the todos
 const renderTodos = function (todos, filters) {
     const filteredTodos = todos.filter(function (todo) {
         return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
@@ -38,7 +38,7 @@ const renderTodos = function (todos, filters) {
     summary.textContent = `You have ${incompleteTodos.length} todos left`
     document.querySelector('#todos').appendChild(summary)
 
-    //Show all of the todos on the page
+    //Show the filtered todos on the page
     filteredTodos.forEach(function (todo) {
         const p = document.createElement('p')
         p.textContent = todo.text
@@ -46,21 +46,31 @@ const renderTodos = function (todos, filters) {
     })
 }
 
+//Function calls
 renderTodos(todos, filters)
 
-//Listen to new todo creation
-document.querySelector('#add-todo').addEventListener('click', function (event){
-    console.log('Add a new todo')
-})
-
-document.querySelector('#new-todo-text').addEventListener('input', function (event) {
-    console.log(event.target.value)
-})
-
-document.querySelector('#search-text').addEventListener('input', function(event) {
-    filters.searchText = event.target.value
+//Filter todos event handler
+document.querySelector('#filter-text').addEventListener('input', function(e) {
+    filters.searchText = e.target.value
     renderTodos(todos, filters)
 })
+
+//New todo submit event handler
+document.querySelector('#new-todo').addEventListener('submit', function (e) {
+    //Prevent default form submission
+    e.preventDefault()
+    //Push new todo to the list
+    todos.push({
+        text: e.target.elements.todoText.value,
+        completed: false
+    })
+    //Print the todos
+    renderTodos(todos, filters)
+    //Clear the todo input box
+    e.target.elements.todoText.value = ''
+})
+
+
 
 
 

@@ -75,7 +75,7 @@ document.querySelector('#new-todo').addEventListener('submit', function (e) {
     //Clear the todo input box
     e.target.elements.todoText.value = ''
 })
-
+//Hide completed checkbox event handler
 document.querySelector('#hide-completed').addEventListener('change', function (e) {
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)

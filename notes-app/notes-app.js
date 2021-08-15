@@ -13,13 +13,15 @@ renderNotes(notes, filters)
 
 //Create note click event handler
 document.querySelector('#create-note').addEventListener('click', function (e) {
+    const id = uuidv4()
+
     notes.push({
-        id: uuidv4(),
+        id: id,
         title: '',
         body: ''
     })
     saveNotes(notes)
-    renderNotes(notes, filters)
+    location.assign(`edit.html#${id}`)
 }) 
 
 //Search text input event handler

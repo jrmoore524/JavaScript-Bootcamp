@@ -1,5 +1,5 @@
 //Notes array
-const notes = getSavedNotes()
+let notes = getSavedNotes()
 
 //Note filters
 const filters = {
@@ -29,8 +29,15 @@ document.querySelector("#search-text").addEventListener('input', function (e) {
     filters.searchText = e.target.value
     renderNotes(notes, filters)
 })
-
+//Filter text input event handler
 document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
     renderNotes(notes, filters)
+})
+//Storage update event handler
+window.addEventListener('storage', function (e) {
+    if (e.key === 'notes') {
+        notes = JSON.parse(e.newValue)
+        renderNotes(notes, filters)
+    }
 })

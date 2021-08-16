@@ -24,7 +24,7 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
         updatedAt: timeStamp
     })
     saveNotes(notes)
-    location.assign(`/edit.html#${id}`)
+    location.assign(`edit.html#${id}`)
 }) 
 
 //Search text input event handler

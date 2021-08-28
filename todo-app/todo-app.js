@@ -1,3 +1,5 @@
+'use strict'
+
 //Todo list array 
 const todos = getSavedTodos()
 

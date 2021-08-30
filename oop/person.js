@@ -1,12 +1,29 @@
-//Constructor Function
-const Person = function (firstName, lastName, age) {
+const Person = function (firstName, lastName, age, likes = []) {
     this.firstName = firstName
     this.lastName = lastName
     this.age = age
+    this.likes = likes
 }
 
-const me = new Person('Jesse', 'Moore', 35)
-console.log(me)
+Person.prototype.getBio = function () {
+    let bio = `${this.firstName} is ${this.age}.`
+
+    this.likes.forEach((like) => {
+        bio += ` ${this.firstName} likes ${like}.`
+    })
+
+    return bio
+}
+
+Person.prototype.setName = function (fullName) {
+    const names = fullName.split(' ')
+    this.firstName = names[0]
+    this.lastName = names[1]
+}
+
+const me = new Person('Jesse', 'Moore', 35, ['Coding', 'Fishing'])
+me.setName('Madeleine Moore')
+console.log(me.getBio())
 
 const person2 = new Person('Tara', 'Moore', 35)
-console.log(person2)
+console.log(person2.getBio())

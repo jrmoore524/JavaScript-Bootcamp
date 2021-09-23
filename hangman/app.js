@@ -18,14 +18,14 @@ getPuzzle((error, puzzle) => {
     } else {
         console.log(puzzle)
     }
-    
 })
 
 
-// Making an HTTP request
+
+//Making an HTTP request
 
 
-// const countryCode = "US"
+// const countryCode = "CL"
 // const countryRequest = new XMLHttpRequest()
 
 // countryRequest.addEventListener('readystatechange', (e) => {
